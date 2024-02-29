@@ -4,6 +4,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family:'font-default';
+    src:url("../font/Raleway/static/Raleway-Regular.ttf");
+}
 
 .container{
     width: 100vw;
@@ -11,6 +15,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(/img/background_login-register.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    font-family: font-default;
+}
+.container h2{
+    position: relative;
+    top: 122px;
+    font-weight: 400;
+    font-size: 1.40rem;
 }
 
 /* LOGIN */
@@ -19,18 +34,20 @@
     height: 550px;
     display: flex;
     justify-content: center;
-    background-color: #d3d1d1;
+    backdrop-filter: blur(10px);
     align-items: center;
     border-radius: 15px;
     z-index: 999;
     overflow: hidden;
+    border: 1px solid #0000000e;
+    box-shadow: 25px 25px 60px rgba(128, 128, 128, 0.568);
 }
 .text-default{
     width: 425px;
     height: 550px;
-    background-color: #d3d1d1;
+    backdrop-filter: blur(10px);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     padding: 50px;
@@ -39,23 +56,27 @@
     padding: 20px 0;
 }
 .btn-register{
+    width: 180px;
     height: 34px;
     padding: 0 10px;
     border-radius: 10px;
     border: none;
     background: transparent;
     transition: all ease 0.5s;
+    position: relative;
+    bottom: 120px;
 }
 .btn-register:hover{
     background-color: transparent;
-    border: 1px solid #000;
+    border: 1px solid #000000;
     cursor: pointer;
     transition: all ease 0.5s;
 }
 .login{
     width: 425px;
     height: 550px;
-    background-color: #b2b2b2;
+    background-color: #214e0344;
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -133,16 +154,19 @@
     height: 550px;
     display: flex;
     justify-content: center;
-    background-color: #d3d1d1;
+    backdrop-filter: blur(10px);
     align-items: center;
     border-radius: 15px;
     z-index: 999;
     overflow: hidden;
+    border: 1px solid #0000000e;
+    box-shadow: 25px 25px 60px rgba(128, 128, 128, 0.568);
 }
 .register{
     width: 425px;
     height: 550px;
-    background-color: #b2b2b2;
+    background-color: #214e0344;
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -150,12 +174,15 @@
     align-items: center;
 }
 .btn-login{
+    width: 180px;
     height: 34px;
     padding: 0 10px;
     border-radius: 10px;
     border: none;
     background: transparent;
     transition: all ease 0.5s;
+    position: relative;
+    bottom: 120px;
 }
 .btn-login:hover{
     background-color: transparent;
