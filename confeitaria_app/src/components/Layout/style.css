@@ -1,0 +1,19 @@
+.layout-container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.layout-container div.main-wrapper{
+    width: 100%;
+    display: flex;
+    gap: 16px;
+
+    padding: 16px 32px;
+}
+
+.layout-container main.main-content{
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+}

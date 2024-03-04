@@ -1,0 +1,26 @@
+.sidebar{
+    width: 100%;
+    padding: 16px 32px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #FFF3;
+}
+
+.profile-area{
+    display: flex;
+    gap: 8px;
+}
+
+.profile-area button{
+    background: #E7E7E7;
+    color: #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+}

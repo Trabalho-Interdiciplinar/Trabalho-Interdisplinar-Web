@@ -1,0 +1,243 @@
+/* CORES */
+:root {
+    --rosaEscuro: #AA5677 !important;
+    --rosaClaro: #F1768A !important;
+    --alaranjado: #f8b2a0c2 !important;
+    --amarelado: #f7e3ca !important;
+    --verdeClaro: #BBD5AB !important;
+}
+
+/* CONFIG PADRAO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--verdeClaro);
+    overflow: hidden;
+}
+img{
+    z-index: -9999;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    src: url(/fonte/Agbalumo/Agbalumo-Regular.ttf);
+    font-family: 'Agbalumo';
+    font-weight: normal;
+}
+@font-face {
+    src: url(/fonte/Great_Vibes/);
+    font-family: 'Great';
+    font-weight: normal;
+}
+@font-face {
+    src: url(/fonte/Poppins/Poppins-Light.ttf);
+    font-family: 'Poppins';
+    font-weight: normal;
+}
+
+.conteudoPrincipal {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: 25% 50% 25%;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+}
+
+/* .logo {
+    width: 13vw;
+    position: relative;
+    top: 4vh;
+} */
+
+.logoNome {
+    font-family: 'Great';
+    align-items: end;
+    background-color: var(--alaranjado);
+    border-style: dashed;
+    border-width: 0.2rem;
+    border-color: var(--amarelado);
+    border-radius: 40px;
+    font-size: 4rem;
+    padding: 0 4vh;
+    color: var(--amarelado);
+}
+
+
+.boxText {
+    font-family: 'Poppins';
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    color: var(--amarelado);
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: var(--alaranjado);
+    border-radius: 40px;
+    height: 30vh;
+    width: 60vw;
+    font-size: 2rem;
+    border-style: dashed;
+    border-width: 0.2rem;
+    border-color: var(--amarelado);
+    padding: 5vh;
+}
+
+.socialMedia {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes {
+    background-color: var(--alaranjado);
+    border-style: dashed;
+    border-width: 0.2rem;
+    border-color: var(--amarelado);
+    border-radius: 40px;
+    width: 15vw;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#redes {
+    width: 4vh;
+    margin: 0 0.8vh;
+}
+
+#doces {
+    width: 30vw;
+    position: relative;
+    bottom: 10vh;
+    transform: rotate(260deg);
+}
+
+
+/* LOGIN */
+
+.conteudoLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxLogin {
+    width: 20vw;
+    height: 50vh;
+    border-style: dashed;
+    border-width: 0.2rem;
+    border-color: var(--amarelado);
+    border-radius: 20px;
+    background-color: var(--amarelo);
+    display: grid;
+    height: 60vh;
+    width: 20vw;
+    grid-template-rows: 50% 50%;
+
+    justify-content: center;
+}
+
+#imgLogo {
+    display: flex;
+    justify-content: center;
+}
+
+.campos {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 6vh;
+}
+
+#campos {
+    width: 15vw;
+    padding: 12px;
+    height: 5vh;
+    background-color: var(--rosaEscuro);
+    color: #4D1F18;
+    font-family: 'Poppins';
+    font-size: 1.3rem;
+    border-radius: 30px;
+    border-style: none;
+    margin-bottom: 1.5vh;
+}
+
+.campos button {
+    width: 7vw !important;
+    border-style: dashed !important;
+    border-width: 0.2rem !important;
+    border-color: var(--amarelado) !important;
+    text-align: center !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+#campos::placeholder {
+    color: var(--amarelado);
+}
+
+
+/* TELA DE PRODUTOS */
+
+.telaContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.navBar{
+    width: 100%;
+    height: 100px;
+
+    background-color: var(--amarelo);
+}
+
+.navProduto{
+    width: 100%;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: row;
+}
+
+.sideBar{
+    width: 250px;
+    height: 100%;
+
+    background-color: var(--rosaEscuro);
+}
+.produto{
+    width: calc(100% - 250px);
+    height: 100%;
+
+    background-color: var(--rosaClaro);
+}
+
+/* langing page */

@@ -1,0 +1,13 @@
+.navbar{
+    width: 320px;
+    padding: 16px;
+
+    border-radius: 4px;
+
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #FFF3;
+}

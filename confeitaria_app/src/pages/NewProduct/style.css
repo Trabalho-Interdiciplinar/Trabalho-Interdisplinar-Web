@@ -1,0 +1,70 @@
+h2.title{
+    text-align: center;
+}
+
+form.new-product-form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+
+    margin: 32px auto;
+    flex: 1;
+}
+
+form.new-product-form .first-content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+form.new-product-form .first-content textarea{
+    min-height: 80px;
+    padding: 8px 16px;
+
+    resize: vertical;
+}
+
+form.new-product-form input{
+    padding: 8px 16px;
+    width: 100%;
+}
+
+form.new-product-form .second-content{
+    display: flex;
+}
+
+form.new-product-form .footer{
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+form.new-product-form .footer button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+form.new-product-form .footer .cancel{
+    background-color: transparent;
+    border: 1px solid #f43f5e;
+    color: #f43f5e;
+    transition: 0.2s;
+}
+
+form.new-product-form .footer .cancel:hover{
+    background-color: #f43f5e;
+    border-color: #f43f5e;
+    color: white;
+}
+
+form.new-product-form .footer .save-button{
+
+}
+
