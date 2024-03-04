@@ -9,6 +9,7 @@
     src:url("../font/Raleway/static/Raleway-Regular.ttf");
 }
 
+/* INICIO-login/register */
 .container{
     width: 100vw;
     height: 100vh;
@@ -84,10 +85,12 @@
     align-items: center;
 }
 .fields{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .fields input{
     width: 300px;
@@ -101,21 +104,22 @@
     position: relative;
     color: #aa9999;
 }
-.fields:focus .placeholder-email{
-    top: 1px !important;
-}
-.placeholder-email{
-    top: 33px;
-    right: 120px;
-}
-.placeholder-senha{
-    top: 33px;
-    right: 120px;
-}
-
 *:focus{
     outline: none;
 }
+
+.fields label{
+    position: absolute;
+    top: 17px;
+    left: 19px;
+    font-size: .8rem;
+}
+.fields .password-label{
+    position: absolute;
+    top: 65px;
+    left: 19px;
+    font-size: .8rem; 
+} 
 
 .options-login{
     width: 300px;
@@ -147,6 +151,9 @@
 
 .sumir{
     display: none !important;
+}
+.aparecer{
+    display: table;
 }
 /* REGISTER */
 .container-register{
@@ -190,3 +197,167 @@
     cursor: pointer;
     transition: all ease 0.5s;
 }
+/* FIM-login/register */
+
+/* INICIO-catalogo_de_produtos */
+
+.container-content{
+    font-family: font-default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(/img/background_login-register.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container-main{
+    width: 1299px;
+    height: auto;
+}
+.navbar{
+    width: 100vw;
+    height: 100px;
+    background-color: #085d272a;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+}
+.navbar .container-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .container-main a {
+    display: flex;
+    width: auto;
+    color: #085d27 !important;
+    font-weight: 600;
+    font-size: 1.04em;
+    text-decoration: none;
+}
+.container-pesquisa {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 360px;
+}
+.container-pesquisa input[type="text"] {
+    border-radius: 10px 0 0 10px;
+    height: 30px;
+    width: 90%;
+    border: none;
+    padding: 0 13px;
+}
+.container-pesquisa button {
+    border-radius: 0 10px 10px 0;
+    border: none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 10%;
+    background-color: #fff;
+}
+.container-pesquisa button:hover{
+    cursor: pointer;
+}
+.container-pesquisa button svg{
+    height: 13px;
+    fill: #085d27;
+    transition: all ease .3s;
+}
+.container-pesquisa button svg:hover{
+    transition: all ease .3s;
+    transform: scale(1.2);
+}
+.shopping-cart{
+    width: 240px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.shopping-cart .cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    height: 30px;
+    width: 35px;
+}
+.shopping-cart .cart svg{
+    fill: #085d27;
+    height: 13px;
+    transition: all ease .3s;
+}
+.shopping-cart .cart svg:hover{
+    transition: all ease .3s;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.shopping-content{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 200px;
+    margin: 30px 0;
+}
+.product {
+    height: 335px;
+    width: 290px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: #085d27;
+    border-radius: 13px;
+    cursor: pointer;
+}
+.product .img{
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+.img img{
+    border-radius: 13px;
+    height: 80%;
+}
+.infos-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 40%;
+    margin: 0 10px;
+    color: #fff;
+}
+.infos-product h2{
+    text-transform: uppercase;
+}
+.infos-product p{
+    text-align: center;
+}
+button.add-to-cart {
+    border-radius: 10px;
+    height: 40px;
+    width: 80px;
+    transition: all ease 0.2s;
+    border: none;
+    color: #085d27;
+}
+ button.add-to-cart:hover{
+    transform: scale(1.01);
+    transition: all ease 0.2s;
+    cursor: pointer;
+ }
+ .price-buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+/* FIM-catalogo_de_produtos */
+
