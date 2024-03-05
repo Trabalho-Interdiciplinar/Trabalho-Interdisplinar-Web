@@ -153,7 +153,7 @@
     display: none !important;
 }
 .aparecer{
-    display: table;
+    display: block;
 }
 /* REGISTER */
 .container-register{
@@ -236,6 +236,7 @@
     font-weight: 600;
     font-size: 1.04em;
     text-decoration: none;
+    text-shadow: 3px 3px 4px #fff;
 }
 .container-pesquisa {
     align-items: center;
@@ -286,6 +287,7 @@
     background-color: #fff;
     height: 30px;
     width: 35px;
+    border: none;
 }
 .shopping-cart .cart svg{
     fill: #085d27;
@@ -305,10 +307,92 @@
     min-height: 200px;
     margin: 30px 0;
 }
+.arrow {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    background-color: #fff;
+    right: 54px;
+    bottom: 79px;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+div .modal-cart {
+    width: 359px;
+    height: auto;
+    top: 82px;
+    right: 5%;
+    position: absolute;
+    background: #fff;
+    padding: 10px 0;
+}
+.product-cart{
+    display: flex;
+    flex-direction: row;
+}
+.infos-product-cart {
+    height: 66px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.product-cart-infos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    width: 60%;
+}
+.product-cart-infos img {
+    height: 66px;
+}
+.product-cart-infos img {
+    height: 66px;
+}
+.product-amount {
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    width: 40%;
+}
+.numbers-products {
+    text-align: center;
+    width: 19px;
+    border: none;
+    cursor: inherit;
+}
+button.button-more-less {
+    width: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.button-finish-pay {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+.finish-pay {
+    background-color: #085d27;
+    border: none;
+    padding: 5px 13px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all ease 1s;
+}
+.finish-pay:hover{
+    transform: scale(1.01);
+}
+
 .product {
     height: 335px;
     width: 290px;
     display: flex;
+    margin: 0 10px;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
@@ -353,11 +437,10 @@ button.add-to-cart {
     transition: all ease 0.2s;
     cursor: pointer;
  }
- .price-buy {
+.price-buy {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 /* FIM-catalogo_de_produtos */
-

@@ -14,12 +14,3 @@ btn_login.addEventListener('click', function(){
     container_login.classList.remove('sumir')
 })
 // FIM - login/register
-
-// INICIO - carrinho de compras
-let cart = document.querySelector('.cart');
-let modal_cart = document.querySelector('.modal-cart');
-
-cart.addEventListener('click', function(){
-    modal_cart.classList.add('aparecer')
-})
-// FIM - carrinho de compras

@@ -11,9 +11,9 @@
 
 <body>
     <main class="container-content">
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
             <div class="container-main">
-                <h1><a href="#">SWEET CONECTION</a></h1>
+                <h1><a href="#navbar">SWEET CONECTION</a></h1>
                 <div class="container-pesquisa">
                     <input type="text" placeholder="buscar...">
                     <button>
@@ -24,28 +24,47 @@
                     </button>
                 </div>
                 <div class="shopping-cart">
-                    <div class="cart">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <button class="cart" id="cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                             <path
                                 d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
                         </svg>
-                    </div>
+                    </button>
                 </div>
-                <div class="modal-cart sumir">
-                    <li>leandro costa</li>
+                <div class="modal-cart" id="modal-cart">
+                    <div class="arrow"></div>
+                    <div class="product-cart">
+                        <div class="product-cart-infos">
+                            <img src="../img/bolo-fuba.png" alt="Imagem produto">
+                            <div class="infos-product-cart">
+                                <p class="title-product-cart">bolo de fuba</p>
+                                <p class="price-product-cart">$100,00</p>
+                            </div>
+                        </div>
+                        <div class="product-amount">
+                            <div class="add-more-product">
+                                <button class="button-more-less" id="menos">-</button>
+                                <input type="text" value="0" class="numbers-products" id="numbers-products" readonly>
+                                <button class="button-more-less" id="mais">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-finish-pay">
+                        <p class="total" id="total">TOTAL: $0,00</p>
+                        <button class="finish-pay">FINALIZAR COMPRA</button>
+                    </div>
                 </div>
             </div>
         </nav>
         <section class="content-produtos">
             <div class="container-main">
                 <div class="shopping-content">
-                    <div class="product">
+                    <div class="product" id="product">
                         <div class="img">
                             <img src="/img/bolo-fuba.png" alt="imagem_produto">
                         </div>
                         <div class="infos-product">
                             <div class="title">
-                                <h2 class="title-product">titulo produto</h2>
+                                <h2 class="title-product">bolo de fuba</h2>
                             </div>
                             <div class="price-buy">
                                 <p>$100,00</p>
@@ -54,15 +73,23 @@
                         </div>
                     </div>
                 </div>
+                <!-- <div class="modal-product">
+                    <div class="img-modal-product-description">
+                        <img src="../img/bolo-fuba.png" alt="Imagem Produto">
+                        <p class="description">Bolo de fuba feito com ingredientes de alta qualidade e
+                            organico, todos tirados do interior de minas gerais.
+                        </p>
+                    </div>
+                </div> -->
             </div>
         </section>
         <footer class="footer">
             <div class="container-main">
-
+                
             </div>
         </footer>
     </main>
 </body>
-<script src="../js/script.js"></script>
+<script src="../js/catalogo.js"></script>
 
 </html>
