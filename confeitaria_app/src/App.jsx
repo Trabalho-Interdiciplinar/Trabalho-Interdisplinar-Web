@@ -7,7 +7,6 @@ import { HomeAdm } from './pages/Adm'
 import { Catalog } from './pages/Catalog/Catalog'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { CartProvider } from "./model/Cart"
-import { Customization } from "./pages/Customization"
 import { Confeitaria } from "./pages/Confeitaria"
 import { Landing } from "./pages/Landing"
 
@@ -20,7 +19,6 @@ function App() {
           <Route path="register" element={ <Register/> }/>
           <Route path="novo-produto" element={ <Layout><NewProduct/></Layout> }/>
           <Route path="perfil" element={ <Layout><Profile/></Layout> }/>
-          <Route path="customization" element={ <Layout><Customization/></Layout> }/>
           <Route path="nova-confeitaria" element={ <Confeitaria/> }/>
           <Route index element = { <Layout><HomeAdm/></Layout> } />
         </Route>

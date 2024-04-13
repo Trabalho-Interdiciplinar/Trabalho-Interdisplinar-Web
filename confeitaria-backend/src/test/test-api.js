@@ -1,9 +1,8 @@
 const express = require('express')
-const auth = require('../authentication/json-auth')
 
 const router = express.Router()
 
-router.get('/', auth, (req, res) => {
+router.get('/', (req, res) => {
     res.send("authorized")
 })
 

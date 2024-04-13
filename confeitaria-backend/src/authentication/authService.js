@@ -28,18 +28,6 @@ class AuthService {
             onError()
         })
     }
-
-    async registerWithAsync(email, password, nomedono, nomeempresa, cnpj){
-        let result = await new DbConnection().executeAsync(`INSERT INTO usuario (email, senha, nomedono, nomeempresa, cnpj) VALUES
-        ('${email}', '${password}', '${nomedono}', '${nomeempresa}', '${cnpj}')`)
-        console.log(result)
-        return result.rows[0]
-    }
-
-    async getUserId(email){
-        let result = await new DbConnection().executeAsync(`SELECT id_usuario from usuario where email = '${email}'`)
-        return result.rows[0]
-    }
 }
 
 module.exports = AuthService

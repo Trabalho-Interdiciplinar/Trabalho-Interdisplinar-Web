@@ -20,6 +20,7 @@ export function Catalog() {
     const { cartProducts, addToCart } = useContext(CartContext)
 
     useEffect(() => {
+        console.log(id)
         axios
             .get("http://localhost:3001/products?confeitaria_id=" + id)
             .then((result) => {
@@ -88,7 +89,7 @@ export function Catalog() {
                                 style={{ background: customization.cor_primaria }}
                                 key={produto.id_produto}
                             >
-                                <img src={produto.photo_url} alt="" height={150} />
+                                <img src={produto.photoUrl} alt="" height={150} />
                                 <h3>{produto.nome}</h3>
                                 <p>{produto.descricao}</p>
                                 <h3>R${produto.preco}</h3>

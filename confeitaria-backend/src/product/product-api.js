@@ -21,6 +21,7 @@ router.post('/product', upload.single('productImage'), async (req, res) => {
     }
 
     productService.createNewProductFirebase(
+        req.query.confeitaria_id,
         product,
         (result) => { res.sendStatus(201) },
         (error) => { res.sendStatus(501) }
@@ -42,28 +43,27 @@ router.patch('/product', (req, res) => {
 
 router.get('/products', (req, res) => {
     productService.fetchProductsWithFirebase(
+        req.query.confeitaria_id,
         (produtcs) => { 
             console.log(produtcs)
             res.send(produtcs) 
-         }
+         },
+         (error) => {
+            res.sendStatus(500)
+        }
     );
 })
 
 router.get('/loja/products', (req, res) => {
-    //console.log(req.query.confeitaria_id)
     productService.fetchProductsWithFirebase(
-        (result) => { 
-            console.log(result)
+        req.query.confeitaria_id,
+        (result) => {
             res.send(result) 
+        },
+        (error) => {
+            res.sendStatus(500)
         }
     );
-    /*
-    productService.fetchConfeitariaProducts(
-        req.query.confeitaria_id, 
-        (result) => { res.send(result) }, 
-        (error) => { res.sendStatus(500) }
-    )
-    */
 })
 
 module.exports = router

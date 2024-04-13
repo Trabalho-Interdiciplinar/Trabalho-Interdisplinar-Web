@@ -28,7 +28,6 @@ export function Header() {
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="perfil">Perfil</Nav.Link>
-                        <Nav.Link href="customization">Customização</Nav.Link>
                         <Nav.Item href="customization" onClick={handleLogout}>
                                 Sair
                         </Nav.Item>

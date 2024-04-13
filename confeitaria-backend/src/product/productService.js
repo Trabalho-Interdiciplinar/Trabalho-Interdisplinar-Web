@@ -4,32 +4,17 @@ const firebaseApp = require("../config/firebase")
 
 class ProductService {
 
-    createNewProductFirebase(product, onCreated, onError) {
+    async createNewProductFirebase(idUser, product, onCreated, onError) {
         const db = getFirestore(firebaseApp);
         console.log(product);
-        addDoc(collection(db, "confeitaria"), product)
+        addDoc(collection(db, "confeitaria", idUser, "products"), product)
             .then((savedProduct) => { onCreated(savedProduct) })
             .catch((error) => { onError(error) });
     }
 
-
-    createNewProduct(product, onCreated, onError) {
-        console.log(product)
-        new DbConnection().execute(`INSERT INTO produto (nome, preco, descricao, photo_url, fk_confeitaria_id) VALUES('${product.nome}', ${Number(product.preco)}, '${product.descricao}', '${product.photoUrl}', ${product.confeitariaId})`, (result) => {
-            if (result.length == 0) {
-                onError()
-            } else {
-                onCreated()
-            }
-        }, (error) => {
-            console.log(error)
-            onError()
-        })
-    }
-
-    async fetchProductsWithFirebase(onLoad) {
+    async fetchProductsWithFirebase(idUser, onLoad, onError) {
         const db = getFirestore(firebaseApp);
-        getDocs(collection(db, "confeitaria"))
+        getDocs(collection(db, "confeitaria", idUser, "products"))
             .then((items) => {
                 const products = []
                 items.forEach((doc) => {
@@ -38,7 +23,7 @@ class ProductService {
                 onLoad(products);
             })
             .catch((error) => {
-                console.log(error)
+                onError(error)
             });
     }
 
