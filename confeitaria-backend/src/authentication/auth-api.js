@@ -11,6 +11,15 @@ router.use((req, res, next) => {
 })
 
 router.post('/login', (req, res) => {
+    const authService = new AuthService();
+    authService.loginWithFirebase(req.body.email, req.body.password, (user) => {
+        res.send({userId: user});
+    }, (error) => {
+        console.log(error);
+        res.sendStatus(500);
+    });
+
+    /*
     const authService = new AuthService()
     console.log(req.body)
     authService.login(req.body.email, req.body.password, (userId, confeitariaId) => {
@@ -21,9 +30,17 @@ router.post('/login', (req, res) => {
     }, () => {
         res.sendStatus(500)
     })
+    */
 })
 
 router.post('/register', async (req, res) => {
+    const authService = new AuthService();
+    authService.registerWithFirebase(req.body.email, req.body.password, (user) => {
+        res.send(user);
+    }, () => {
+        res.sendStatus(500);
+    });
+    /*
     const passwordEncrypt = new PasswordEncrypt()
     const authService = new AuthService()
     try {
@@ -34,6 +51,7 @@ router.post('/register', async (req, res) => {
         console.log(error)
         res.sendStatus(500)
     }
+    */
 })
 
 module.exports = router

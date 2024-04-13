@@ -1,11 +1,22 @@
 const DbConnection = require('../database/connection')
+const { getFirestore, setDoc, doc, addDoc, collection, getDocs } = require('firebase/firestore')
+const firebaseApp = require("../config/firebase")
 
 class ProductService {
 
-    createNewProduct(product, onCreated, onError){
+    createNewProductFirebase(product, onCreated, onError) {
+        const db = getFirestore(firebaseApp);
+        console.log(product);
+        addDoc(collection(db, "confeitaria"), product)
+            .then((savedProduct) => { onCreated(savedProduct) })
+            .catch((error) => { onError(error) });
+    }
+
+
+    createNewProduct(product, onCreated, onError) {
         console.log(product)
         new DbConnection().execute(`INSERT INTO produto (nome, preco, descricao, photo_url, fk_confeitaria_id) VALUES('${product.nome}', ${Number(product.preco)}, '${product.descricao}', '${product.photoUrl}', ${product.confeitariaId})`, (result) => {
-            if(result.length == 0){
+            if (result.length == 0) {
                 onError()
             } else {
                 onCreated()
@@ -16,9 +27,24 @@ class ProductService {
         })
     }
 
-    fetchProducts(confeitariaId, onProductsLoaded, onError){
+    async fetchProductsWithFirebase(onLoad) {
+        const db = getFirestore(firebaseApp);
+        getDocs(collection(db, "confeitaria"))
+            .then((items) => {
+                const products = []
+                items.forEach((doc) => {
+                    products.push(doc.data())
+                })
+                onLoad(products);
+            })
+            .catch((error) => {
+                console.log(error)
+            });
+    }
+
+    fetchProducts(confeitariaId, onProductsLoaded, onError) {
         new DbConnection().execute(
-            `select * from produto as p where fk_confeitaria_id = ${confeitariaId} and p.habilitado = true order by id_produto desc`, 
+            `select * from produto as p where fk_confeitaria_id = ${confeitariaId} and p.habilitado = true order by id_produto desc`,
             (result) => {
                 console.log(result)
                 onProductsLoaded(result.rows)
@@ -30,9 +56,9 @@ class ProductService {
         )
     }
 
-    fetchConfeitariaProducts(confeitariaId, onProductsLoaded, onError){
+    fetchConfeitariaProducts(confeitariaId, onProductsLoaded, onError) {
         new DbConnection().execute(
-            `select * from produto as p where fk_confeitaria_id = ${confeitariaId} order by id_produto desc`, 
+            `select * from produto as p where fk_confeitaria_id = ${confeitariaId} order by id_produto desc`,
             (result) => {
                 console.log(result)
                 onProductsLoaded(result.rows)
@@ -44,14 +70,14 @@ class ProductService {
         )
     }
 
-    toggleProductEnable(productId, enable, onSuccess, onError){
+    toggleProductEnable(productId, enable, onSuccess, onError) {
         new DbConnection().execute(
             `UPDATE produto p set habilitado = ${enable} where p.id_produto = ${productId}`,
-            (result)=>{ 
+            (result) => {
                 console.log(result)
                 onSuccess(result)
-             },
-            (err)=>{
+            },
+            (err) => {
                 console.log(err)
                 onError(err)
             }

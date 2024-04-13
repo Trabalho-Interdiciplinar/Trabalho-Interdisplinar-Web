@@ -29,7 +29,7 @@ export function CardDetail({ show, handleClose, product }) {
                 <Modal.Body>
                     <Row>
                         <Col xs={12}>
-                            <Image src={product.photo_url} thumbnail />
+                            <Image src={product.photoUrl} thumbnail />
                         </Col>
                         <Col xs={12}>
                             {product.descricao}

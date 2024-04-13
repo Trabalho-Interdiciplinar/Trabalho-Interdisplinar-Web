@@ -16,7 +16,7 @@ export function ProductDetail({product}) {
         <>
             <Col xs={12} md={6} lg={4} xl={4} xxl={3} onClick={handleShow}>
                 <Card style={{ margin: 2, height: 400 }} >
-                        <Card.Img variant="top" src={product.photo_url} style={{ width: '100%', height: 150, objectFit: 'contain' }} />
+                        <Card.Img variant="top" src={product.photoUrl} style={{ width: '100%', height: 150, objectFit: 'contain' }} />
                     <Card.Body>
                         <Card.Title>{product.nome}</Card.Title>
                         <hr/>

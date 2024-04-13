@@ -1,35 +1,30 @@
 const DbConnection = require('../database/connection')
 const bcrypt = require('bcrypt')
+const firebase = require('../config/firebase')
+const {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} = require("firebase/auth")
 
 class AuthService {
-    login(email, password, onLogin, onError){
-        new DbConnection().execute(`
-            select u.id_usuario , u.senha, c.id_confeitaria  from usuario u inner join confeitaria c on u.id_usuario = c.fk_id_usuario where u.email  = '${email}'`, (result) => {
-            if(result.length == 0){
-                onError()
-            } else {
-                console.log(result.rows[0]);
-                // console.log(result.rows[0].id_confeitaria);
-                const samePassword = bcrypt.compareSync(password, result.rows[0].senha)
-                if(samePassword){
-                    onLogin(result.rows[0].id_usuario, result.rows[0].id_confeitaria)
-                } else {
-                    onError()
-                }
-            }
-        }, (error) => {
-            console.log(error)
-            onError()
+    
+    loginWithFirebase(email, password, onSuccess, onError){
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+        .then((user) => {
+            onSuccess(user)
         })
+        .catch((error) => {
+            onError(error)
+        });
     }
 
-    register(email, password, nomedono, nomeempresa, cnpj, onRegister, onError){
-        new DbConnection().execute(`INSERT INTO usuario (email, senha, nomedono, nomeempresa, cnpj) VALUES
-        ('${email}', '${password}', '${nomedono}', '${nomeempresa}', '${cnpj}')`, (result) => {
-            console.log(result)
-            onRegister()
-        }, (error) => { 
-            console.log(error)
+    registerWithFirebase(email, senha, onSuccess, onError){
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, senha)
+        .then((user => {
+            console.log(user);
+            onSuccess(user);
+        }))
+        .catch((error)=> {
+            console.log(error);
             onError()
         })
     }

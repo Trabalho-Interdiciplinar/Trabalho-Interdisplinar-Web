@@ -22,7 +22,8 @@ export function Login(){
             
             axios.post("http://localhost:3001/auth/login", e)
             .then(response => {
-                console.log(response.data)
+                console.log("Token id: " + response.idToken)
+
                 if(response.data.userId != undefined){
                     user.saveUser({id_usuario: response.data.userId})
                     user.saveConfeitaria({id_confeitaria: response.data.idConfeitaria})
