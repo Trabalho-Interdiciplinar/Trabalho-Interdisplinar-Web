@@ -9,7 +9,7 @@ body{
 }
 .navbar{
     display: flex;
-    justify-content: space-around !important  ;
+    justify-content: space-evenly !important  ;
     align-items: center;
     height: 100px;  
 }

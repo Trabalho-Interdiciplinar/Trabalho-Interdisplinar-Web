@@ -9,6 +9,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { CartProvider } from "./model/Cart"
 import { Confeitaria } from "./pages/Confeitaria"
 import { Landing } from "./pages/Landing"
+import { VerLojas } from "./pages/VerLojas"
 
 function App() {
   return (
@@ -26,7 +27,9 @@ function App() {
         <Route path="ecommerce">
           <Route path=":id" element={ <CartProvider><Catalog/></CartProvider> }/>
         </Route>
-
+ 
+          <Route path="verlojas" element={<VerLojas/>}></Route>
+       
         <Route index element={ <Landing/> }></Route>
       </Routes>
     </BrowserRouter>

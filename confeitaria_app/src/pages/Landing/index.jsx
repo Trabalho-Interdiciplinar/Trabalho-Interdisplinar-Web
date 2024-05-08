@@ -6,6 +6,7 @@ export function Landing() {
         <div className="navbar">
           <h1 className="logo">SWEET CONNECTION</h1>
           <p className="login"><a href="loja/login">LOGIN</a></p>
+          <p className="login"><a href="verlojas">VER LOJAS</a></p>
         </div>
         <div className="content">
           <p>Olá, bem vindo ao nosso sistema Sweet-Connection. 

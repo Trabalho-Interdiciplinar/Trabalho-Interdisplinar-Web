@@ -23,6 +23,12 @@ class ConfeitariaService {
 
         return result.rows[0]
     }
+
+    async getConfeitarias(){
+        let result = await new DbConnection().executeAsync(
+            
+        )
+    }
 }
 
 module.exports = ConfeitariaService

@@ -11,6 +11,7 @@ export function HomeAdm() {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
+        
         axios.get('http://localhost:3001/loja/products?confeitaria_id=' + user.getConfeitariaId())
             .then(res => setProducts(res.data))
             .catch(err => console.log(err))

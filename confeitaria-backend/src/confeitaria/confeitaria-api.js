@@ -27,4 +27,8 @@ router.get('/confeitaria', (req, res) => {
     res.sendStatus(201)
 })
 
+router.get('/verlojas', (req, res) =>{
+    console.log(req.query.confeitaria)
+})
+
 module.exports = router
