@@ -1,168 +1,112 @@
-@font-face {
-    src: url(./src/fonte/Agbalumo/Agbalumo-Regular.ttf);
-    font-family: 'Agbalumo';
-    font-weight: normal;
+*{
+    padding: 0 !important;
+    margin: 0 !important;
 }
-@font-face {
-    src: url(./src/fonte/Great_Vibes/);
-    font-family: 'Great';
-    font-weight: normal;
-}
-@font-face {
-    src: url(./src/fonte/Poppins/Poppins-Light.ttf);
-    font-family: 'Poppins';
-    font-weight: normal;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
+
+.container-catalogo{
+    height: 100vh;
+    width: 100vw;
     overflow-x: hidden;
 }
 
-.container-catalogo {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    width: 100vw !important;
-    height: 100vh !important;
-}
 .navbar-catalogo{
+    height: 13vh;
+    width: 100vw;
+    background-color: #edd5e5;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: auto;
-    width: auto;
 }
-.logo-catalogo img {
-    height: 100px;
-    margin: 10px;
-    margin-left: 40px !important;
-}
-select{
-    width: 120px;
-    height: 47px;
-    border-radius: 9px;
-    text-align: center;
-    background-color: #fff;
-    text-transform: uppercase !important;
-    color: #000;
+.logo-catalogo img{
+    margin-left: 85px !important;
+    height: 11vh;
 }
 .opcoes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.cart-catalogo button{
-    width: 120px !important;
-    border-radius: 10px !important;
-    text-align: center !important;
-    background-color: #fff !important;
-    text-transform: uppercase !important;
-    color: #000 !important;
-    border: solid black 1px !important;
-    margin: 0 30px !important;
-    transition: all ease 0.4s;
-    font-weight: 400;
-}
-.cart-catalogo :hover{
-    background-color: #000 !important;
-    color: #fff !important;
-    transition: all ease 0.4s;
-}
-.colocarnocarrinho{
-    padding: 5px;
-    font-weight: 400;
-    background-color: #fff;
-    color: #000;
-    border: #000 !important;
-    border-radius: 7px !important; 
-    transition: all ease 0.4s;
-}
-.colocarnocarrinho:hover{
-    background-color: #000 !important;
-    color: #fff !important;
-    transition: all ease 0.4s;
-}
-body::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: #fff;        /* color of the tracking area */
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #9c9c9c;
-    border-radius: 10px;       /* roundness of the scroll thumb */
-    border: 2px solid #c4c1c1;  /* creates padding around scroll thumb */
-  }
-.content-catalogo {
+    width: 15vw !important;
     display: flex;
     flex-direction: row;
-
-    width: calc(100vw);
-}
-
-.cardapio-catalogo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #e2e2e280;
-    box-shadow: -2px -3px rgba(0, 0, 0, 0.116);
-    padding: 20px;
-}
-
-.card-catalogo {
-    display: flex;
-    flex-direction: column;
-    border-radius: 6px;
-    box-shadow: 2px 2px rgba(49, 48, 48, 0.116);
     align-items: center;
-    padding: 9px;
-    margin: 6px;
-
-    width: 300px;
-    height: 350px;
-    background-color: #fff;
+    justify-content: space-between;
+    margin-right: 85px !important;
 }
-
-.card-catalogo img {
-    max-height: 100px;
+.content-catalogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 87vh;
+    background-image: url(../../assets/png/parede-de-concreto.jpg);
+    background-size: cover;
+    background-color: antiquewhite;
 }
-
-.card-catalogo h3 {
-    font-family: 'Agbalumo';
-    font-size: 1.5rem;
+.cardapio-catalogo{
+    width: 96vw;
+    min-height: 79vh;
+    display: flex;
+    height: auto;
+    padding: 19px !important;
+    justify-content: center;
 }
-
-.card-catalogo p {
-    text-align: center;
-    font-family: 'Poppins';
-    font-size: 1rem;
-    padding: 0 0 10px 0;
-    height: 90px;
+.card-catalogo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 30vh !important;
+    width: 20vw;
+    margin: 0 20px !important;
 }
-
-.colocarnocarrinho {
-    background-color: #fff !important;
-    border: solid 1px #000;
-    border-radius: 10px;
-    color: #000;
+.img_card{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-/* RESPONSIVIDADE */
-@media (max-width: 1480px) {
-    .sidebar-catalogo {
-        width: 70vw;
-    }
+.card-catalogo img{
+    height: 100px;
+    min-width: auto;
 }
-
-@media (max-width: 1210px) {
-    .sidebar-catalogo {
-        width: 100vw;
-    }
+.card_descript{
+    border-radius: 15px;
+    padding: 0 10px !important;
+    display: flex;
+    height: 17vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.card_descript #title{
+    font-size: 1.3rem;
+    color: #f1a7e2;
+}
+.card_descript #price{
+    font-size: 1.2rem;
+    color: #4D1F18;
+}
+.card_descript .colocarnocarrinho{
+    position: absolute;
+    bottom: -17px;
+    border-radius: 19px;
+    padding: 5px 10px !important;
+    background-color: #f1a7e2;
+}
+.cart-catalogo button{
+    background-color: transparent !important;
+    position: relative;
+}
+.cart-catalogo img{
+    height: 40px;
+}
+.cart-catalogo .quant_uni{
+    background-color: #4D1F18 !important;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 25px;
 }
