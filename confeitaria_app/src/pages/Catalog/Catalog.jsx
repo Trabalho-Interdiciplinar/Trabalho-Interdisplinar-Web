@@ -55,7 +55,7 @@ export function Catalog() {
                  <div className="navbar-catalogo">
                     <div className="logo-catalogo">
                         <img
-                            src={customization.url_imagem || "../../public/vite.svg"}
+                            src="../../src/assets/png/logo.png"
                             alt=""
                             height={150}
                         />
@@ -70,8 +70,8 @@ export function Catalog() {
                         </select>
                         <div className="cart-catalogo">
                             <button onClick={handleCheckout}>
-                                CARRINHO 
-                                <Badge pill bg="success">
+                                <img src="../../src/assets/shopping-cart.svg" alt="" />
+                                <Badge pill bg="success" className="quant_uni">
                                     {cartProducts.length}
                                 </Badge>
                             </button>
@@ -81,19 +81,20 @@ export function Catalog() {
                 <div className="content-catalogo">
                     <div
                         className="cardapio-catalogo"
-                        style={{ background: customization.cor_secundaria }}
                     >
                         {produtos.map((produto) => (
                             <div
                                 className="card-catalogo"
-                                style={{ background: customization.cor_primaria }}
                                 key={produto.id_produto}
                             >
-                                <img src={produto.photoUrl} alt="" height={150} />
-                                <h3>{produto.nome}</h3>
-                                <p>{produto.descricao}</p>
-                                <h3>R${produto.preco}</h3>
-                                <button className="colocarnocarrinho"onClick={() => handleShowCart(produto)}>COLOCAR NO CARRINHO</button>
+                                <div className="img_card">
+                                <img src={produto.photoUrl} alt="" />
+                                </div>
+                                <div className="card_descript">
+                                <h3 id="title">{produto.nome}</h3>
+                                <h3 id="price">R${produto.preco}</h3>
+                                <button className="colocarnocarrinho"onClick={() => handleShowCart(produto)}>COMPRAR</button>
+                                </div>
                             </div>
                         ))}
                     </div>
