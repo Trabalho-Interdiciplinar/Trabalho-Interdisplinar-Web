@@ -106,7 +106,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    background-image: url(../../img/background_lading.jpg);
+    background-image: url(/src/img/background_lading.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
