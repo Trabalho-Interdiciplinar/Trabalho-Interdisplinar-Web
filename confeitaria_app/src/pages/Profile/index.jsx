@@ -6,37 +6,44 @@ import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { User } from '../../model/User';
+import './profile.css'
 
 export function Profile() {
 
     let user = new User()
     const [confeitaria, setConfeitaria] = useState({})
 
-    useEffect(()=>{
+    useEffect(() => {
         axios.get('http://localhost:3001/profile?confeitariaId=' + user.getConfeitariaId())
-        .then((response) => { setConfeitaria(response.data) })
-        .catch((err) => { console.log(err)})
+            .then((response) => { setConfeitaria(response.data) })
+            .catch((err) => { console.log(err) })
     }, [])
 
     return (
-        <Row>
-            <Col xs={3}>
-                <Figure>
-                    <Figure.Image
-                        width={171}
-                        height={180}
-                        alt="171x180"
-                        src={confeitaria.logo_url} />
-                </Figure>
-            </Col>
+        <Row id="form">
+            <Row id="intro">
+                Nome confeitaria
+                <Row>
+                    <Col xs={3}>
+                        <Figure>
+                            <Figure.Image
+                                width={171}
+                                height={180}
+                                alt="171x180"
+                                src={confeitaria.logo_url} />
+                        </Figure>
+                    </Col>
+                </Row>
+
+            </Row>
             <Col xs={9} style={{ paddingTop: 20 }}>
-                <Form>
+                <Form class="">
                     <Form.Group as={Row} className="mb-3">
-                        <Form.Label column sm="2">
+                        <Form.Label column sm="2" id="Nome">
                             Nome da Loja
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control type='text' placeholder='Nome' value={confeitaria.nome} />
+                            <Form.Control type='text' placeholder='Nome'  value={confeitaria.nome} />
                         </Col>
                     </Form.Group>
 
@@ -45,10 +52,9 @@ export function Profile() {
                             Telefone
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control type="text" placeholder="Telefone" value={confeitaria.celular}/>
+                            <Form.Control type="text" placeholder="Telefone" value={confeitaria.celular} />
                         </Col>
                     </Form.Group>
-
                     <Form.Group as={Row} className="mb-3" >
                         <Form.Label column sm="2">
                             CNPJ
@@ -72,7 +78,7 @@ export function Profile() {
                             Telefone
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control type="text" placeholder="Telefone" value={confeitaria.telefone}/>
+                            <Form.Control type="text" placeholder="Telefone" value={confeitaria.telefone} />
                         </Col>
                     </Form.Group>
 
