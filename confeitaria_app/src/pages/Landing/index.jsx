@@ -18,6 +18,9 @@ export function Landing() {
               <a href="loja/login" className="butonLading" >
                 COMEÇAR
               </a>
+              <a href="verlojas">
+                VER LOJAS
+                </a>
             </div>
           </div>
           <div className="rowLading">

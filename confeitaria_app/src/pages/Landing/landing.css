@@ -82,17 +82,32 @@ header {
     color: lightpink;
 }
 
+.loginLading {
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 100px;
+
+}
+
 .loginLading a {
     text-decoration: none;
+    text-align: center;
+    width: 300px;
+    padding: 20px !important;
     color: black;
-    padding: 30px !important;
     border-radius: 10px;
     background-color: rgba(128, 128, 128, 0.541);
+    margin-top: 30px !important;
 }
 
 .loginLading a:hover {
     background-color: rgb(253, 216, 222);
     transition: .2s;
+    scale: 1.1;
 }
 
 /* Cabeçalho Fim */
