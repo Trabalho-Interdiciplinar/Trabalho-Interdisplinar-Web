@@ -1,0 +1,9 @@
+.modal-container{
+    display: flex !important;
+    justify-content: center;
+}
+.modal-content{
+    min-height: 130px;
+    max-height: 200px !important;
+    width: 450px !important;
+}
