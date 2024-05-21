@@ -2,18 +2,20 @@
     padding: 0 !important;
     margin: 0 !important;
 }
-
 .container-catalogo{
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
     position: relative;
+    background-size: cover;
+    background-image: url(../../assets/png/background.jpg);
 }
 
 .navbar-catalogo{
     height: 13vh;
     width: 100vw;
-    background-color: #edd5e5;
+    background-color: #edd5e559;
+    backdrop-filter: blur(7px) !important;
 
     display: flex;
     flex-direction: row;
@@ -37,7 +39,6 @@
     justify-content: center;
     align-items: center;
     min-height: 87vh;
-    background-size: cover;
 }
 .cardapio-catalogo{
     width: 96vw;
@@ -46,8 +47,49 @@
     height: auto;
     padding: 19px !important;
     justify-content: center;
+    flex-wrap: wrap;
 }
-.card-catalogo{
+
+.card-catalogo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00000045;
+    margin: 10px !important;
+    height: 400px;
+    width: 360px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+.img_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden !important;
+    margin-top: 10px !important;
+    height: 50%;
+}
+.img_card img {
+    height: 200px;
+    width: 340px;
+}
+.card_descript {
+    background-color: rgba(0, 0, 0, 0.055);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 90%;
+    text-align: center;
+    margin: 10px 0 !important;
+    border-radius: 10px !important;
+}
+
+/* .card-catalogo{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -104,7 +146,7 @@
     border: solid 1px #f1a7e2;
     transform: scale(1.04);
     transition: all ease 0.3s;
-}
+} */
 .cart-catalogo:hover{
     border: none !important;
 }
