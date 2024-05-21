@@ -8,11 +8,11 @@ export class User {
     }
 
     getUserId(){
-        return JSON.parse(localStorage.getItem('user')).id_usuario.user.uid
+        return JSON.parse(localStorage.getItem('user')).user.uid
     }
 
     getConfeitariaId(){
-        return JSON.parse(localStorage.getItem('user')).id_usuario.user.uid
+        return JSON.parse(localStorage.getItem('user')).user.uid
     }
 
     signOut(){

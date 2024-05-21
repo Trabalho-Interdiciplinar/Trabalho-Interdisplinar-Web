@@ -2,68 +2,45 @@ const express = require('express')
 const multer = require('multer')
 const ImageUploader = require('../image/ImageUpload')
 const ProductService = require('./productService')
+const Database = require("../database/databaseRef")
 
 const upload = multer()
 const router = express.Router()
-const productService = new ProductService()
+const productService = new ProductService(new Database())
 
 router.post('/product', upload.single('productImage'), async (req, res) => {
-    const imageUploader = new ImageUploader()
-    const filePath = await imageUploader.uploadWithFirebase(req.file)
-
-    console.log(filePath)
-
-    const product = {
-        nome: req.body.nome,
-        preco: req.body.preco,
-        descricao: req.body.descricao,
-        photoUrl: filePath,
+    try{
+        req.body.photoUrl = await (new ImageUploader()).uploadWithFirebase(req.file)
+        await productService.createNewProductFirebase(req.query.confeitaria_id, req.body)
+        res.sendStatus(201)
+    }catch (exception){
+        console.log(exception)
+        res.sendStatus(500)
     }
-
-    productService.createNewProductFirebase(
-        req.query.confeitaria_id,
-        product,
-        (result) => { res.sendStatus(201) },
-        (error) => { res.sendStatus(501) }
-    )
 })
 
 router.patch('/product', (req, res) => {
-    productService.toggleProductEnable(
-        req.query.productId, 
-        req.query.habilitado,
-        (result)=>{
-            res.send(true)
-        }, 
-        (err)=>{
-            res.sendStatus(500)
-        }
-    )
+    res.sendStatus(500)
 })
 
-router.get('/products', (req, res) => {
-    productService.fetchProductsWithFirebase(
-        req.query.confeitaria_id,
-        (produtcs) => { 
-            console.log(produtcs)
-            res.send(produtcs) 
-         },
-         (error) => {
-            res.sendStatus(500)
-        }
-    );
+router.get('/products', async (req, res) => {
+    try{
+        let products = await productService.fetchProductsWithFirebase(req.query.confeitaria_id);
+        console.log(products)
+        res.send(products)
+    }catch{
+        res.sendStatus(500)
+    }
 })
 
-router.get('/loja/products', (req, res) => {
-    productService.fetchProductsWithFirebase(
-        req.query.confeitaria_id,
-        (result) => {
-            res.send(result) 
-        },
-        (error) => {
-            res.sendStatus(500)
-        }
-    );
+router.get('/loja/products', async (req, res) => {
+    try{
+        let products = await productService.fetchProductsWithFirebase(req.query.confeitaria_id);
+        console.log(products)
+        res.send(products)
+    }catch{
+        res.sendStatus(500)
+    }
 })
 
 module.exports = router
