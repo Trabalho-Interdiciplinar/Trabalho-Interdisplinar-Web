@@ -53,7 +53,7 @@ export function Catalog() {
       <div className="container-catalogo">
         <div className="navbar-catalogo">
           <div className="logo-catalogo">
-            <img src="../../src/assets/png/logo.png" alt="" height={150} />
+            <h2>loja do pessoal</h2>
           </div>
           <div className="opcoes">
             <select className="select">
@@ -81,19 +81,19 @@ export function Catalog() {
                   <img src={produto.photoUrl} alt="" />
                 </div>
                 <div className="card_descript">
-                  <h3 id="title">{produto.nome}</h3>
-                  <h3 id="price">R${produto.preco}</h3>
+                  <h3 id="title">{produto.nome}</h3> 
                   <button
                     className="colocarnocarrinho"
                     onClick={() => handleShowCart(produto)}
                   >
-                    COMPRAR
+                    COMPRAR R${produto.preco}
                   </button>
                 </div>
               </div>
             ))}
           </div>
         </div>
+        <footer className="footer">©sweetconnection</footer>
       </div>
 
       <CartModal
