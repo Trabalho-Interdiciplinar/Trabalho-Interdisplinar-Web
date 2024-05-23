@@ -164,7 +164,8 @@ select.select {
     font-family: font-default !important;
 }
 
-footer.footer{
+footer.footer {
+    width: 100vw;
     display: flex;
     height: 3vh;
     background-color: #000000c2;
@@ -175,4 +176,7 @@ footer.footer{
     color: #ffffff;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    bottom: 1px;
+    box-shadow: 0px -6px 14px black;
 }
