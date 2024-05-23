@@ -1,7 +1,6 @@
 @font-face {
-    src: url(/src/fonte/Pacifico/Pacifico-Regular.ttf);
-    font-family: 'Title';
-    font-weight: normal;
+    font-family:'font-default-login';
+    src:url("../../../src/fonte/Racing_Sans_One/RacingSansOne-Regular.ttf");
 }
 *{
     padding: 0 !important;
@@ -11,10 +10,18 @@
 .content_background {
     height: 100vh;
     width: 50vw;
-    background-image: url(/src/img/background_login-register.jpg);
+    background-image: url(../../assets/png/background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content_background h1{
+    font-family: font-default-login !important;
+    font-size: 10rem !important;
+    color: #fff;
 }
 
 .text{
@@ -23,16 +30,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #000;
 }
 .text h1{
-    font-family: Title;
+    font-family: font-title;
     font-size: 2.0rem !important;
 }
 
 .content{
     width: 100vw !important;
     height: 100vh !important;
-    color: #f1a7e2;
+    color: #000;
 }
 .content h1{
     font-size: 1.4rem;
@@ -42,13 +50,13 @@
     height: 40px;
     border-radius: 6px;
     transition: all ease 0.4s;
-    background-color: rgb(229 213 227);
-    border: solid #edd5e5 1px;
+    background-color: #000;
+    border: solid 1px #000 !important;
 }
 .content button:hover{
-    border: solid #edd5e5 1px;
+    border: solid 1px #000 !important;
     background-color: transparent;
-    color: #edd5e5;
+    color: #000;
     transition: all ease 0.4s;
 }
 
@@ -70,6 +78,7 @@
     margin: 20px 0px !important;
     text-align: center;
     font-weight: 400 !important;
+    font-family: font-default !important;
 }
 
 .login-container{

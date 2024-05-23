@@ -11,13 +11,17 @@
     padding: 0 !important;
     margin: 0 !important;
 }
+html{
+    scroll-behavior: smooth !important;
+}
 .container-catalogo{
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
     position: relative;
     background-size: cover;
-    background-image: url(../../assets/png/background.jpg);
+    background-image: url(../../assets/png/background.jpeg);
+    scroll-behavior: smooth !important;
 }
 
 .navbar-catalogo{
@@ -176,7 +180,5 @@ footer.footer {
     color: #ffffff;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    bottom: 1px;
     box-shadow: 0px -6px 14px black;
 }

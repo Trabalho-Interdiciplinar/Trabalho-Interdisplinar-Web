@@ -81,7 +81,7 @@ export function Catalog() {
                   <img src={produto.photoUrl} alt="" />
                 </div>
                 <div className="card_descript">
-                  <h3 id="title">{produto.nome}</h3> 
+                  <h3 id="title">{produto.nome}</h3>
                   <button
                     className="colocarnocarrinho"
                     onClick={() => handleShowCart(produto)}
