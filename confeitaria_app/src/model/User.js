@@ -12,7 +12,7 @@ export class User {
     }
 
     getConfeitariaId(){
-        return JSON.parse(localStorage.getItem('user')).user.uid
+        return JSON.parse(localStorage.getItem('user')).id_usuario.user.uid
     }
 
     signOut(){
