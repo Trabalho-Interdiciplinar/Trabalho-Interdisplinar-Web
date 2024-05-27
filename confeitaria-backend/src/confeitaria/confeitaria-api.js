@@ -42,6 +42,14 @@ router.post('/confeitaria', upload.single('logo_url'), async (req, res) => {
     )
 })
 
+router.get('/confeitaria', async(req, res) => {
+    confeitariaService.fetchConfeitaria(
+        req.query.confeitaria_id, 
+        (confeitaria) => { res.send(confeitaria) }, 
+        (error) => { res.status(500).send(error) }
+    )
+})
+
 router.get('/verlojas', async (req, res) =>{
     await confeitariaService.fetchConfeitarias(async (products)=>{
         console.log(products)
