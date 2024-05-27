@@ -2,42 +2,41 @@ import "./landing.css";
 export function Landing() {
   return (
     <>
-      <body>
-        <main>
-          <div className="rowLading aux">
-            <div className="textLading">
-              <p className="title">Olá, bem vindo ao nosso sistema Sweet-Connection.</p>
-              <p className="textLading">
-                Uma solução criada para micro-empresas com a finalidade de ajula-los a irem mais longe com suas vendas e
-                crescer seu negocio de uma forma mais sistematizada e tecnologica.
-                Se ainda nao faz parte do nosso time de associados, venha se assosiar com o melhor site para
-                confeitarias!
+      <div className="container-page">
+        <div className="container-page-content">
+          <div className="clientes">
+            <div className="cliente">
+              <p>
+                Para clientes, o Sweet Connection é seu destino definitivo para
+                descobrir e saborear as melhores delícias artesanais da sua
+                região. Navegue por uma variedade irresistível de doces, bolos,
+                tortas e outras guloseimas feitas com amor e dedicação pelos
+                melhores confeiteiros locais. Com apenas alguns cliques, você
+                pode explorar cardápios, fazer pedidos e desfrutar de
+                experiências culinárias que vão adoçar o seu dia. Aproveite a
+                conveniência de ter as confeitarias mais renomadas ao seu
+                alcance e satisfaça seus desejos por doces de forma rápida e
+                prática.
               </p>
+              <button>ver lojas</button>
             </div>
-            <div className="loginLading">
-              <a href="loja/login" className="butonLading" >
-                COMEÇAR
-              </a>
-              <a href="verlojas">
-                VER LOJAS
-                </a>
-            </div>
-          </div>
-          <div className="rowLading">
-            <div className="carrossel"></div>
-          </div>
-          <div className="rowLading cards">
-            <div className="cardLading comments">
-              <div className="feedback">Feedback</div>
-              <div className="perfilLading"></div>
-              <div className="comment"> Produtos de excelentes qualidades, ótimo atendimento e atenção com o cliente. AMEII!!</div>
+            <div className="cliente-sc">
+              <p>
+                Para confeiteiros e produtores, o Sweet Connection é a
+                plataforma perfeita para expandir seu negócio e alcançar novos
+                clientes apaixonados por doces. Aqui, você pode criar sua loja
+                virtual, exibir seus produtos mais deliciosos e gerenciar seus
+                pedidos com facilidade. Conecte-se com uma comunidade de amantes
+                da confeitaria, aumente sua visibilidade e faça seu negócio
+                crescer. Estamos comprometidos em oferecer a você todas as
+                ferramentas necessárias para o sucesso, desde a criação do seu
+                perfil até a gestão de entregas e pagamentos.
+              </p>
+              <button>login</button>
             </div>
           </div>
-          <div className="rowLading">
-            <img className="deliveryFlow" src="/src/img/flow_lading.png" alt="" />
-          </div>
-        </main>
-      </body>
+        </div>
+      </div>
     </>
   );
 }
