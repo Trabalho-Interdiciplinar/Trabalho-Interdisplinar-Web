@@ -5,7 +5,7 @@
     height: calc(100vh - 100px);
 }
 
-.container-page{
+.container-page {
     width: 100vw;
     height: auto !important;
     display: flex;
@@ -13,24 +13,79 @@
     align-items: center;
 }
 
-.container-page-content{
+.container-page-content {
     width: 75vw;
     min-height: 100vh;
-
-    background-color: black;
 }
 
-.clientes{
+.title {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    font-family: font-title;
+    font-size: 4rem;
+}
+
+.clientes {
     padding: 25px !important;
-
-    background-color: beige;
 }
 
-.cliente{
+.cliente {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px !important;
+}
 
-    background-color: aliceblue;
+.cliente p {
+    order: 2;
+}
+
+.cliente button {
+    order: 1;
+}
+
+.cliente-sc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px !important;
+}
+
+.clientes p {
+    font-family: font-default;
+    font-size: 1.3rem;
+    width: 70%;
+    color: #000;
+}
+
+.clientes a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.clientes button:hover a {
+    color: #000;
+}
+
+.clientes button {
+    width: 15%;
+    height: 45px;
+    border-radius: 10px;
+    margin: 0 40px !important;
+    text-transform: uppercase;
+    background-color: #000;
+    transition: all ease 0.4s;
+    border: 4px solid #000;
+}
+
+.clientes button:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all ease 0.4s;
+    border: 1px solid #000;
 }
