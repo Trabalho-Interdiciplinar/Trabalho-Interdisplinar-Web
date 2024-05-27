@@ -47,6 +47,15 @@ class ConfeitariaService {
         onLoad(profileList)
     }
 
+    async fetchConfeitaria(confeitariaId, onLoad, onError){
+        const db = getFirestore(firebaseApp);
+        let catalogo = await getDocs(collection(db, "confeitaria", confeitariaId, "perfil"))
+        catalogo.docs.map((doc) => { 
+            onLoad(doc.data())
+            return
+        })
+    }
+
     async saveProfile(confeitaria, onCreated, onError) {
         const db = getFirestore(firebaseApp);
         addDoc(collection(db, "confeitaria", confeitaria.usuario_id, "perfil"), confeitaria)
