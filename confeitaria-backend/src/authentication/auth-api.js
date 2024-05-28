@@ -1,5 +1,6 @@
 const express = require('express')
 const AuthService = require('./authService')
+const ConfeitariaService = require('../confeitaria/confeitariaService')
 
 const router = express.Router()
 
@@ -20,7 +21,11 @@ router.post('/login', (req, res) => {
 
 router.post('/register', async (req, res) => {
     const authService = new AuthService();
+    const confeitariaService = new ConfeitariaService();
+
     authService.registerWithFirebase(req.body.email, req.body.password, (user) => {
+        console.log(user)
+        confeitariaService.saveCatalog(user.user.uid)
         res.send(user);
     }, () => {
         res.sendStatus(500);

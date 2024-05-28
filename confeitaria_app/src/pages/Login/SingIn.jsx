@@ -50,7 +50,7 @@ export function Login() {
     return (
         <>
             <div className="content">
-                <div className="content_background"></div>
+                <div className="content_background"><h1>SC</h1></div>
                 <div className="content_login-singin">
                     <div className="login-container">
                         <div className="text">

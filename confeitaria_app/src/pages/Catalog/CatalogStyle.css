@@ -1,27 +1,46 @@
+@font-face {
+    font-family:'font-title';
+    src:url("../../../src/fonte/Cinzel_Decorative/CinzelDecorative-Regular.ttf");
+}
+@font-face {
+    font-family:'font-default';
+    src:url("../../../src/fonte/Jaldi/Jaldi-Regular.ttf");
+}
+
 *{
     padding: 0 !important;
     margin: 0 !important;
 }
-
+html{
+    scroll-behavior: smooth !important;
+}
 .container-catalogo{
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+    position: relative;
+    background-size: cover;
+    background-image: url(../../assets/png/background.jpeg);
+    scroll-behavior: smooth !important;
 }
 
 .navbar-catalogo{
     height: 13vh;
     width: 100vw;
-    background-color: #edd5e5;
+    background-color: #00000059;
+    backdrop-filter: blur(7px) !important;
+    box-shadow: 0px 2px 15px black;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.logo-catalogo img{
+.logo-catalogo h2{
     margin-left: 85px !important;
-    height: 11vh;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: font-title;
 }
 .opcoes{
     width: 15vw !important;
@@ -35,10 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 87vh;
-    background-image: url(../../assets/png/parede-de-concreto.jpg);
-    background-size: cover;
-    background-color: antiquewhite;
+    min-height: 84vh;
 }
 .cardapio-catalogo{
     width: 96vw;
@@ -47,60 +63,92 @@
     height: auto;
     padding: 19px !important;
     justify-content: center;
+    flex-wrap: wrap;
 }
-.card-catalogo{
+
+.card-catalogo {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 30vh !important;
-    width: 20vw;
-    margin: 0 20px !important;
+    align-items: center;
+    background-color: #00000045;
+    margin: 10px !important;
+    height: 300px;
+    width: 360px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
 }
-.img_card{
-    height: auto;
-    width: auto;
+.img_card {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.card-catalogo img{
-    height: 100px;
-    min-width: auto;
-}
-.card_descript{
     border-radius: 15px;
-    padding: 0 10px !important;
+    overflow: hidden !important;
+    margin-top: 10px !important;
+    height: 90%;
+    box-shadow: 0px 0px 15px black;
+}
+.img_card img {
+    height: 200px;
+    width: 340px;
+}
+.card_descript {
+    /* background-color: rgba(0, 0, 0, 0.055);
+    backdrop-filter: blur(10px); */
     display: flex;
-    height: 17vh;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    position: relative;
+    height: 50%;
+    width: 90%;
+    text-align: center;
+    margin: 10px 0 !important;
+    border-radius: 10px !important;
+    font-family: font-default !important;
+    
 }
 .card_descript #title{
     font-size: 1.3rem;
-    color: #f1a7e2;
+    color: #ffffff;
+    text-transform: uppercase !important;
+    font-family: font-default !important;
 }
 .card_descript #price{
     font-size: 1.2rem;
-    color: #4D1F18;
+    color: #ffffff;
+    font-family: font-default !important;
 }
 .card_descript .colocarnocarrinho{
-    position: absolute;
-    bottom: -17px;
-    border-radius: 19px;
-    padding: 5px 10px !important;
-    background-color: #f1a7e2;
+    width: 130px;
+    height: 35px;
+    border-radius: 10px;
+    border: none !important;
+    transition: all ease 0.3s;
+}
+.card_descript .colocarnocarrinho:hover{
+    border: none !important;
+    transition: all ease 0.3s;
+    background-color: #828284;
+    box-shadow: 2px 2px 10px black;
+}
+
+.cart-catalogo:hover{
+    border: none !important;
 }
 .cart-catalogo button{
     background-color: transparent !important;
     position: relative;
+    border: none !important;
+}
+.cart-catalogo button:hover{
+    transform: scale(1.04);
+    border: none !important;
 }
 .cart-catalogo img{
     height: 40px;
 }
 .cart-catalogo .quant_uni{
-    background-color: #4D1F18 !important;
+    background-color: #000000 !important;
     height: 15px;
     width: 15px;
     display: flex;
@@ -109,4 +157,28 @@
     position: absolute;
     top: 0px;
     left: 25px;
+}
+select.select {
+    padding: 0 5px !important;
+    width: 105px;
+    text-align: start;
+    border-radius: 10px;
+    border: none !important;
+    text-transform: uppercase;
+    font-family: font-default !important;
+}
+
+footer.footer {
+    width: 100vw;
+    display: flex;
+    height: 3vh;
+    background-color: #000000c2;
+    backdrop-filter: blur(5px);
+    text-transform: uppercase;
+    font-family: font-default !important;
+    text-align: center;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px -6px 14px black;
 }

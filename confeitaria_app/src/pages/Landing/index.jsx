@@ -2,22 +2,34 @@ import "./landing.css";
 export function Landing() {
   return (
     <>
-      <body>
-        <div className="navbar">
-          <h1 className="logo">SWEET CONNECTION</h1>
-          <p className="login"><a href="loja/login">LOGIN</a></p>
-          <p className="login"><a href="verlojas">VER LOJAS</a></p>
+      <div className="container-page">
+        <div className="container-page-content">
+          <div className="title">sweet connection</div>
+          <div className="clientes">
+            <div className="cliente">
+              <p>
+                Para clientes, o Sweet Connection é o lugar perfeito para
+                descobrir e pedir os melhores doces artesanais da sua região.
+                Navegue por uma variedade de bolos, tortas, doces e outras
+                delícias feitas com carinho pelos confeiteiros locais. Com
+                alguns cliques, você pode fazer seu pedido e aproveitar essas
+                gostosuras no conforto da sua casa.
+              </p>
+              <button className="btn"><a href="verlojas">ver lojas</a></button>
+            </div>
+            <div className="cliente-sc">
+              <p>
+                Para confeiteiros, o Sweet Connection é a oportunidade ideal
+                para expandir seu negócio. Crie sua loja virtual, mostre seus
+                produtos e alcance mais clientes apaixonados por doces. Nossa
+                plataforma facilita a gestão de pedidos e ajuda você a crescer e
+                prosperar.
+              </p>
+              <button className="btn"><a href="loja/login">login</a></button>
+            </div>
+          </div>
         </div>
-        <div className="content">
-          <p>Olá, bem vindo ao nosso sistema Sweet-Connection. 
-            Uma solução criada para micro-empresas com a finalidade de ajula-los a irem mais longe com suas vendas e crescer seu negocio de uma forma mais sistematizada e tecnologica.
-            Se ainda nao faz parte do nosso time de associados, venha se assosiar com o melhor site para confeitarias!
-          </p>
-        </div>
-        <footer>
-            
-        </footer>
-      </body>
+      </div>
     </>
   );
 }
