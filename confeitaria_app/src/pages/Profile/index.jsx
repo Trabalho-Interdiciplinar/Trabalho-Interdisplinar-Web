@@ -20,7 +20,7 @@ export function Profile() {
     }, [])
 
     return (
-        <Row id="form">
+        <Row className="perfil">
             <Row id="intro">
                 Nome confeitaria
                 <Row>
@@ -37,13 +37,13 @@ export function Profile() {
 
             </Row>
             <Col xs={9} style={{ paddingTop: 20 }}>
-                <Form class="">
+                <Form className="">
                     <Form.Group as={Row} className="mb-3">
                         <Form.Label column sm="2" id="Nome">
                             Nome da Loja
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control type='text' placeholder='Nome'  value={confeitaria.nome} />
+                            <Form.Control type='text' placeholder='Nome' value={confeitaria.nome} />
                         </Col>
                     </Form.Group>
 
@@ -82,7 +82,7 @@ export function Profile() {
                         </Col>
                     </Form.Group>
 
-                    <Button variant="primary" size="sm">Salvar Informacoes</Button>{' '}
+                    <Button variant="primary" id="Bsalvar" size="sm">Salvar Informacoes</Button>{' '}
                 </Form>
             </Col>
         </Row>
