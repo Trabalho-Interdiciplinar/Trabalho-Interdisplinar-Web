@@ -1,13 +1,40 @@
-.navbar{
-    width: 320px;
-    padding: 16px;
+@font-face {
+    font-family: 'font-title';
+    src: url(../../../src/fonte/Cinzel_Decorative/CinzelDecorative-Regular.ttf);
+}
 
+.header-cabecalho {
     border-radius: 4px;
+    height: 20vh !important;
+    width: 100vw !important;
+    background-color: #ffffff00 !important;
+    backdrop-filter: blur(1000px) !important;
+}
 
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #FFF3;
+.titulo-header {
+    font-family: 'font-title' !important;
+    font-size: 40px !important;
+}
+
+.container-header {
+    width: 100vw !important;
+    height: 20vh;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+}
+
+.aux-header {
+    margin-left: 700px !important;
+}
+
+.aux2-header {
+    color: black;
+    padding: 8px 20px !important;
+}
+
+.aux2-header:hover {
+    background-color: rgb(220, 220, 220);
 }

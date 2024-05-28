@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { User } from '../../model/User';
+import "./perfil-css.css";
 
 export function Profile() {
 
@@ -19,7 +20,7 @@ export function Profile() {
     }, [])
 
     return (
-        <Row>
+        <Row className='corpo-perfil'>
             <Col xs={3}>
                 <Figure>
                     <Figure.Image
@@ -30,13 +31,13 @@ export function Profile() {
                 </Figure>
             </Col>
             <Col xs={9} style={{ paddingTop: 20 }}>
-                <Form>
+                <Form className='formulario-perfil'>
                     <Form.Group as={Row} className="mb-3">
                         <Form.Label column sm="2">
                             Nome da Loja
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control type='text' placeholder='Nome' value={confeitaria.nome} />
+                            <Form.Control className='campo-perfil' type='text' placeholder='Nome' value={confeitaria.nome} />
                         </Col>
                     </Form.Group>
 
@@ -45,7 +46,7 @@ export function Profile() {
                             Telefone
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control type="text" placeholder="Telefone" value={confeitaria.celular}/>
+                            <Form.Control className='campo-perfil' type="text" placeholder="Telefone" value={confeitaria.celular}/>
                         </Col>
                     </Form.Group>
 
@@ -54,7 +55,7 @@ export function Profile() {
                             CNPJ
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control type="text" placeholder="CNPJ" />
+                            <Form.Control className='campo-perfil' type="text" placeholder="CNPJ" />
                         </Col>
                     </Form.Group>
 
@@ -63,7 +64,7 @@ export function Profile() {
                             Endereco
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control type="text" placeholder="Endereco" />
+                            <Form.Control className='campo-perfil' type="text" placeholder="Endereco" />
                         </Col>
                     </Form.Group>
 
@@ -72,11 +73,11 @@ export function Profile() {
                             Telefone
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control type="text" placeholder="Telefone" value={confeitaria.telefone}/>
+                            <Form.Control className='campo-perfil' type="text" placeholder="Telefone" value={confeitaria.telefone}/>
                         </Col>
                     </Form.Group>
 
-                    <Button variant="primary" size="sm">Salvar Informacoes</Button>{' '}
+                    <Button variant="primary" size="sm" className='salvar-perfil'>Salvar Informações</Button>{' '}
                 </Form>
             </Col>
         </Row>

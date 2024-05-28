@@ -1,19 +1,36 @@
-.layout-container{
-    width: 100vw;
-    height: 100vh;
-}
 
 .layout-container div.main-wrapper{
     width: 100%;
     display: flex;
     gap: 16px;
-
     padding: 16px 32px;
 }
 
 .layout-container main.main-content{
     display: flex;
     flex: 1;
-
     flex-direction: column;
 }
+
+.layoutPadrao{
+    background-image: url(../../assets/png/background.jpeg);
+    height: 80vh;
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    background-size: cover;
+    scroll-behavior: smooth !important;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+
+/* #pagProdutos {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+} */
