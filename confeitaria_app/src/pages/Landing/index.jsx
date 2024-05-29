@@ -4,35 +4,28 @@ export function Landing() {
     <>
       <div className="container-page">
         <div className="container-page-content">
+          <div className="title">sweet connection</div>
           <div className="clientes">
             <div className="cliente">
               <p>
-                Para clientes, o Sweet Connection é seu destino definitivo para
-                descobrir e saborear as melhores delícias artesanais da sua
-                região. Navegue por uma variedade irresistível de doces, bolos,
-                tortas e outras guloseimas feitas com amor e dedicação pelos
-                melhores confeiteiros locais. Com apenas alguns cliques, você
-                pode explorar cardápios, fazer pedidos e desfrutar de
-                experiências culinárias que vão adoçar o seu dia. Aproveite a
-                conveniência de ter as confeitarias mais renomadas ao seu
-                alcance e satisfaça seus desejos por doces de forma rápida e
-                prática.
+                Para clientes, o Sweet Connection é o lugar perfeito para
+                descobrir e pedir os melhores doces artesanais da sua região.
+                Navegue por uma variedade de bolos, tortas, doces e outras
+                delícias feitas com carinho pelos confeiteiros locais. Com
+                alguns cliques, você pode fazer seu pedido e aproveitar essas
+                gostosuras no conforto da sua casa.
               </p>
-              <button>ver lojas</button>
+              <button className="btn"><a href="verlojas">ver lojas</a></button>
             </div>
             <div className="cliente-sc">
               <p>
-                Para confeiteiros e produtores, o Sweet Connection é a
-                plataforma perfeita para expandir seu negócio e alcançar novos
-                clientes apaixonados por doces. Aqui, você pode criar sua loja
-                virtual, exibir seus produtos mais deliciosos e gerenciar seus
-                pedidos com facilidade. Conecte-se com uma comunidade de amantes
-                da confeitaria, aumente sua visibilidade e faça seu negócio
-                crescer. Estamos comprometidos em oferecer a você todas as
-                ferramentas necessárias para o sucesso, desde a criação do seu
-                perfil até a gestão de entregas e pagamentos.
+                Para confeiteiros, o Sweet Connection é a oportunidade ideal
+                para expandir seu negócio. Crie sua loja virtual, mostre seus
+                produtos e alcance mais clientes apaixonados por doces. Nossa
+                plataforma facilita a gestão de pedidos e ajuda você a crescer e
+                prosperar.
               </p>
-              <button>login</button>
+              <button className="btn"><a href="loja/login">login</a></button>
             </div>
           </div>
         </div>
