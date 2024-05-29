@@ -19,7 +19,6 @@ export function HomeAdm() {
 
     return (
         <>
-            <h1>Gerenciar produtos da sua loja</h1>
             <Row style={{marginBottom: 16}}>
                 {products.map(product => (
                     <ProductDetail product={product} key={product.id_produto}/>

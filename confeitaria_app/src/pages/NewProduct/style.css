@@ -1,41 +1,50 @@
-h2.title{
-    text-align: center;
+@font-face {
+    font-family: 'font-title';
+    src: url(../../../src/fonte/Cinzel_Decorative/CinzelDecorative-Regular.ttf);
 }
 
-form.new-product-form{
-    width: 80%;
+h2.title {
+    text-align: center;
+    font-family: 'font-title';
+    margin-bottom: 100px !important;
+}
+
+form.new-product-form {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 16px;
-
+    align-items: center ;
     margin: 32px auto;
     flex: 1;
 }
 
-form.new-product-form .first-content{
+form.new-product-form .first-content {
     display: flex;
     flex-direction: column;
+    width: 700px;
     gap: 8px;
 }
 
-form.new-product-form .first-content textarea{
+form.new-product-form .first-content textarea {
     min-height: 80px;
     padding: 8px 16px;
 
     resize: vertical;
 }
 
-form.new-product-form input{
+form.new-product-form input {
     padding: 8px 16px;
     width: 100%;
 }
 
-form.new-product-form .second-content{
+form.new-product-form .second-content {
     display: flex;
+    width: 700px;
 }
 
-form.new-product-form .footer{
+form.new-product-form .footer {
     margin-top: auto;
     display: flex;
     align-items: center;
@@ -43,7 +52,7 @@ form.new-product-form .footer{
     gap: 8px;
 }
 
-form.new-product-form .footer button{
+form.new-product-form .footer button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,20 +60,26 @@ form.new-product-form .footer button{
 
 
 
-form.new-product-form .footer .cancel{
+form.new-product-form .footer .cancel {
     background-color: transparent;
     border: 1px solid #f43f5e;
     color: #f43f5e;
     transition: 0.2s;
+    padding: 3px 40px !important;
 }
 
-form.new-product-form .footer .cancel:hover{
+form.new-product-form .footer .cancel:hover {
     background-color: #f43f5e;
     border-color: #f43f5e;
     color: white;
+    transition: .7s;
 }
 
-form.new-product-form .footer .save-button{
-
+form.new-product-form .footer .save-button {
+    padding: 3px 40px !important;
 }
 
+form.new-product-form .footer .save-button:hover {
+    background-color: rgb(0, 66, 0);
+    transition: .7s;
+}

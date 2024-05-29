@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import "./card_modal.css";
 
 export function CardDetail({ show, handleClose, product }) {
 
@@ -26,7 +27,7 @@ export function CardDetail({ show, handleClose, product }) {
                 <Modal.Header closeButton>
                     <Modal.Title>{product.nome}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className='card-modal'>
                     <Row>
                         <Col xs={12}>
                             <Image src={product.photoUrl} thumbnail />

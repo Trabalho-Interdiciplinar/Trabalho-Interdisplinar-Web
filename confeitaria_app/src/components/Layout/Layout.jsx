@@ -8,12 +8,12 @@ import './style.css'
 export function Layout(props){
     return (
         <Container fluid>
-            <Row>
+            <Row className='cabecalhoPadrao'>
                 <Col xs={12}><Header /></Col>
             </Row>
-            <Row style={{marginTop: 12, marginLeft: 12, marginRight: 12}}>
-                <Col xs={3}><Sidebar/></Col>
-                <Col xs={9}>{props?.children}</Col>
+            <Row className = 'layoutPadrao' style={{marginTop: 12, marginLeft: 12, marginRight: 12}}>
+                {/* <Col xs={3}><Sidebar/></Col> */}
+                <Col id = 'pagProdutos'>{props?.children}</Col>
             </Row>
         </Container>
     )
