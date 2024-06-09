@@ -32,7 +32,7 @@ export function Login() {
                     console.log("Token id: " + response.idToken);
 
                     if (response.data.userId != undefined) {
-                        user.saveUser({ id_usuario: response.data.userId });
+                        user.saveUser({ user: response.data.userId });
                         user.saveConfeitaria({
                             id_confeitaria: response.data.idConfeitaria,
                         });

@@ -8,6 +8,10 @@ class ProfileService{
 
         return result.rows[0]
     }
+
+    async fetchConfeitaria(){
+        
+    }
 }
 
 module.exports = ProfileService

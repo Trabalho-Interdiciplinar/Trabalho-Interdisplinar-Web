@@ -5,10 +5,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { User } from '../../model/User';
+import { useNavigate } from 'react-router-dom';
 
 export function Confeitaria(){
 
     let user = new User()
+    let navigate = useNavigate();
 
     const confeitaria = {
         nome: '',
@@ -30,6 +32,7 @@ export function Confeitaria(){
             .then(response => {
                 console.log(response)
                 user.saveConfeitaria(response.data)
+                navigate('/loja')
             })
             .catch(err => console.log(err))
     }

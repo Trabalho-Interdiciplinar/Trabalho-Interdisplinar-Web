@@ -1,10 +1,10 @@
 /* CORES */
 :root {
-    --rosaEscuro: #AA5677 !important;
-    --rosaClaro: #F1768A !important;
-    --alaranjado: #f8b2a0c2 !important;
-    --amarelado: #f7e3ca !important;
-    --verdeClaro: #BBD5AB !important;
+    --rosaEscuro: #AA5677;
+    --rosaClaro: #F1768A;
+    --alaranjado: #f8b2a0c2;
+    --amarelado: #f7e3ca;
+    --verdeClaro: #BBD5AB;
 }
 
 /* CONFIG PADRAO */

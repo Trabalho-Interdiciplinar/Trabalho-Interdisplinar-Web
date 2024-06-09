@@ -14,7 +14,7 @@ export function Profile() {
     const [confeitaria, setConfeitaria] = useState({})
 
     useEffect(() => {
-        axios.get('http://localhost:3001/profile?confeitariaId=' + user.getConfeitariaId())
+        axios.get('http://localhost:3001/confeitaria?confeitaria_id=' + user.getConfeitariaId())
             .then((response) => { setConfeitaria(response.data) })
             .catch((err) => { console.log(err) })
     }, [])
