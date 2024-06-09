@@ -8,6 +8,7 @@ const imageUpload = require('./image/upload-image-api')
 const product = require('./product/product-api')
 const confeitaria = require('./confeitaria/confeitaria-api')
 const perfil = require('./profile/profile-api')
+const pedidos = require('./pedidos/pedidos-api')
 
 app.all('*', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -24,6 +25,7 @@ app.use('/', imageUpload)
 app.use('/', product)
 app.use('/', confeitaria)
 app.use('/', perfil)
+app.use('/', pedidos)
 
 app.listen(3001, () => {
     console.log(`Server running at http://localhost:3001`)

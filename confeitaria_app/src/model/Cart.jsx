@@ -1,6 +1,10 @@
+import axios from 'axios'
 import { createContext, useEffect, useState } from "react";
+import { User } from './User'
 
 export const CartContext = createContext()
+
+const user = new User()
 
 export const CartProvider = ({children}) => {
     const [cartProducts, setProducts] = useState(JSON.parse(localStorage.getItem('carrinho')) || [])
@@ -28,12 +32,30 @@ export const CartProvider = ({children}) => {
 
     }
 
+
     const carteResume = () => {
+        saveProductInHistory()
         let resume = "Olá! Quero fazer o pedido dos seguintes itens: %0a%0a"
         resume += cartProducts.map(product => product.nome + " " + product.quantity  + " unidade(s)." + "%0a")
         resume += "%0aTotalizando R$ " + cartSum();
         return resume
     }
+
+    const saveProductInHistory = () => {
+        const saveProduct = (product) => {
+            axios.post(
+                'http://localhost:3001/pedidos?user_id=' + user.getUserId(),
+                product,
+                { headers: { 'Content-Type': 'application/json' } }
+            ).then(response => {
+                console.log(product);
+                alert('Produto salvo!');
+            }).catch(err => console.log(err));
+        };
+
+        cartProducts.forEach(product => saveProduct(product));
+    };
+
 
     useEffect(() => {
         localStorage.setItem('carrinho', JSON.stringify(cartProducts))
