@@ -51,6 +51,7 @@ class ConfeitariaService {
         const db = getFirestore(firebaseApp);
         let catalogo = await getDocs(collection(db, "confeitaria", confeitariaId, "perfil"))
         catalogo.docs.map((doc) => { 
+            //console.log(doc.data())
             onLoad(doc.data())
             return
         })

@@ -36,7 +36,6 @@ router.get('/products', async (req, res) => {
 router.get('/loja/products', async (req, res) => {
     try{
         let products = await productService.fetchProductsWithFirebase(req.query.confeitaria_id);
-        console.log(products)
         res.send(products)
     }catch{
         res.sendStatus(500)

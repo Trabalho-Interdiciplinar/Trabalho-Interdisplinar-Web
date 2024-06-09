@@ -32,29 +32,34 @@ router.get('/confeitarias', async (req, res) => {
 router.post('/confeitaria', upload.single('logo_url'), async (req, res) => {
     const imageUploader = new ImageUploader()
     const filePath = await imageUploader.uploadWithFirebase(req.file)
-    
+
     req.body.logo_url = filePath
 
     confeitariaService.saveProfile(
-        req.body, 
-        (savedConfeitaria) => { res.send(savedConfeitaria) }, 
+        req.body,
+        (savedConfeitaria) => { res.send(savedConfeitaria) },
         (error) => { res.status(500).send(error) }
     )
 })
 
-router.get('/confeitaria', async(req, res) => {
+router.get('/confeitaria', async (req, res) => {
     confeitariaService.fetchConfeitaria(
-        req.query.confeitaria_id, 
-        (confeitaria) => { res.send(confeitaria) }, 
-        (error) => { res.status(500).send(error) }
+        req.query.confeitaria_id,
+        (confeitaria) => {
+            console.log(confeitaria)
+            res.send(confeitaria)
+        },
+        (error) => {
+            res.status(500).send(error)
+        }
     )
 })
 
-router.get('/verlojas', async (req, res) =>{
-    await confeitariaService.fetchConfeitarias(async (products)=>{
+router.get('/verlojas', async (req, res) => {
+    await confeitariaService.fetchConfeitarias(async (products) => {
         console.log(products)
         res.send(products)
-    }, (error)=>{
+    }, (error) => {
         console.log(error)
         res.sendStatus(500)
     })
