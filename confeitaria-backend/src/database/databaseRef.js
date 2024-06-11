@@ -10,12 +10,14 @@ class Database {
 
     async fetch(path) {
         try {
+            console.log(path)
             return (await getDocs(collection(database, path))).docs.map((doc) => {
                 let jsonResponse = doc.data()
                 jsonResponse["id"] = doc.id
                 return jsonResponse
             })
-        } catch {
+        } catch (e){
+            console.log(e)
             return []
         }
     }
