@@ -6,7 +6,6 @@ import { CartModal } from "../../components/CartModal/index.jsx";
 import { CheckoutModal } from "../../components/Checkout/index.jsx";
 import { CartContext } from "../../model/Cart.jsx";
 import Badge from "react-bootstrap/Badge";
-import Button from "react-bootstrap/Button";
 
 export function Catalog() {
   const { id } = useParams();
@@ -14,7 +13,7 @@ export function Catalog() {
   const [showCart, setShowCart] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState({});
   const [showCheckout, setCheckout] = useState(false);
-  const [customization, setCustomization] = useState({});
+  const [confeitaria, setConfeitaria] = useState({});
 
   const { cartProducts, addToCart } = useContext(CartContext);
 
@@ -23,7 +22,7 @@ export function Catalog() {
     axios
       .get("http://localhost:3001/products?confeitaria_id=" + id)
       .then((result) => {
-        console.log(result.data);
+        console.log(result.data)
         setproduct(result.data);
       })
       .catch((erro) => console.log(erro));
@@ -31,12 +30,11 @@ export function Catalog() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/customization?confeitariaId=" + id)
+      .get("http://localhost:3001/confeitaria?confeitaria_id=" + id)
       .then((response) => {
-        console.log(response.data);
-        setCustomization(response.data);
+        setConfeitaria(response.data);
       })
-      .catch((err) => {});
+      .catch((err) => { console.log(err) });
   }, []);
 
   const handleShowCart = (product) => {
@@ -53,7 +51,7 @@ export function Catalog() {
       <div className="container-catalogo">
         <div className="navbar-catalogo">
           <div className="logo-catalogo">
-            <h2>loja do pessoal</h2>
+            <h2>{confeitaria.nome}</h2>
           </div>
           <div className="opcoes">
             <select className="select">
@@ -74,9 +72,9 @@ export function Catalog() {
           </div>
         </div>
         <div className="content-catalogo">
-          <div className="cardapio-catalogo">
+          <div className="cardapio-catalogo" key={1}>
             {produtos.map((produto) => (
-              <div className="card-catalogo" key={produto.id_produto}>
+              <div className="card-catalogo" key={produto.id}>
                 <div className="img_card">
                   <img src={produto.photoUrl} alt="" />
                 </div>
@@ -107,6 +105,7 @@ export function Catalog() {
 
       <CheckoutModal
         show={showCheckout}
+        contact={confeitaria.celular}
         handleClose={() => {
           setCheckout(false);
         }}

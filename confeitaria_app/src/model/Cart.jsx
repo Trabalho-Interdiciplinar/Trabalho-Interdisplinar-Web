@@ -6,22 +6,22 @@ export const CartContext = createContext()
 
 const user = new User()
 
-export const CartProvider = ({children}) => {
+export const CartProvider = ({ children }) => {
     const [cartProducts, setProducts] = useState(JSON.parse(localStorage.getItem('carrinho')) || [])
 
     const addToCart = (product, quantity) => {
-        const productInCart = cartProducts.find(p => p.id_produto === product.id_produto)
-        if(productInCart){
+        const productInCart = cartProducts.find(p => p.id === product.id)
+        if (productInCart) {
             setProducts(
-                cartProducts.map(p => product.id_produto === p.id_produto ? {...p, quantity: p.quantity + quantity} : p)
+                cartProducts.map(p => product.id === p.id ? { ...p, quantity: p.quantity + quantity } : p)
             )
         } else {
-            setProducts([...cartProducts, {...product, quantity: quantity}])
+            setProducts([...cartProducts, { ...product, quantity: quantity }])
         }
     }
 
     const removeProduct = (product) => {
-        setProducts(cartProducts.filter(item => item.id_produto !== product.id_produto))
+        setProducts(cartProducts.filter(item => item.id !== product.id))
     }
 
     const cartSum = () => {
@@ -32,38 +32,36 @@ export const CartProvider = ({children}) => {
 
     }
 
-
     const carteResume = () => {
         saveProductInHistory()
         let resume = "Olá! Quero fazer o pedido dos seguintes itens: %0a%0a"
-        resume += cartProducts.map(product => product.nome + " " + product.quantity  + " unidade(s)." + "%0a")
+        resume += cartProducts.map(product => product.nome + " " + product.quantity + " unidade(s)." + "%0a")
         resume += "%0aTotalizando R$ " + cartSum();
         return resume
     }
 
     const saveProductInHistory = () => {
         const saveProduct = (product) => {
-            axios.post(
-                'http://localhost:3001/pedidos?user_id=' + user.getUserId(),
-                product,
-                { headers: { 'Content-Type': 'application/json' } }
-            ).then(response => {
-                console.log(product);
-                alert('Produto salvo!');
-            }).catch(err => console.log(err));
+            // axios.post(
+            //     'http://localhost:3001/pedidos?user_id=' + user.getUserId(),
+            //     product,
+            //     { headers: { 'Content-Type': 'application/json' } }
+            // ).then(response => {
+            //     console.log(product);
+            //     alert('Produto salvo!');
+            // }).catch(err => console.log(err));
         };
 
         cartProducts.forEach(product => saveProduct(product));
     };
-
 
     useEffect(() => {
         localStorage.setItem('carrinho', JSON.stringify(cartProducts))
     }, [cartProducts])
 
     return (
-        <CartContext.Provider 
-        value={{cartProducts, addToCart, cartSum, removeProduct, clearCart, carteResume}}>
+        <CartContext.Provider
+            value={{ cartProducts, addToCart, cartSum, removeProduct, clearCart, carteResume }}>
             {children}
         </CartContext.Provider>
     )

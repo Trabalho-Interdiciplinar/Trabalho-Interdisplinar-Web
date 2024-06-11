@@ -8,14 +8,20 @@ export function VerLojas() {
 
     useEffect(() => {
         axios.get('http://localhost:3001/verlojas')
-            .then((response) => { setConfeitarias(response.data) })
+            .then((response) => { 
+                console.log(response.data)
+                setConfeitarias(response.data) 
+            })
             .catch((err) => { console.log(err) })
     }, [])
 
     return (
         <>
             {confeitarias.map((confeitaria) => (
-                <div> {confeitaria.nome} </div>
+                <>
+                    <div> {confeitaria.nome} </div>
+                    <div> <a href={"http://localhost:5173/ecommerce/" + confeitaria.usuario_id }>Loja</a> </div>
+                </>
             ))}
         </>
     )

@@ -7,12 +7,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../model/Cart';
 import "./style.css"
 
-export function CheckoutModal({show, handleClose}) {
+export function CheckoutModal({show, contact, handleClose}) {
 
     const { cartProducts , cartSum, removeProduct, carteResume } = useContext(CartContext)
 
     const redirectToConfeitaria = () => {
-        window.open("http://wa.me/5531999763087?text=" + carteResume(), "_blank")
+        window.open("http://wa.me/" + contact + "?text=" + carteResume(), "_blank")
     }
 
     return (
@@ -26,7 +26,7 @@ export function CheckoutModal({show, handleClose}) {
                         <Row>
                             {cartProducts.map(product => (
                                 <>
-                                    <Col xs={10} key={product.id_produto}>
+                                    <Col xs={10} key={product.id}>
                                         <Row>
                                             <Col xs={12}>Item: {product.nome} (R$ {product.preco})</Col>
                                             <Col xs={12}>Quantidade: {product.quantity}</Col>
